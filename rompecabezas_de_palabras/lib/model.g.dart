@@ -1,10 +1,6 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'model.dart';
 
-// **************************************************************************
-// BuiltValueGenerator
-// **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Crossword.serializer)
@@ -1447,4 +1443,3 @@ class CrosswordPuzzleGameBuilder
   }
 }
 
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint

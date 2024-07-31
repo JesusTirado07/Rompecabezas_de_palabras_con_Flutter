@@ -12,13 +12,9 @@ part 'providers.g.dart';
 
 const backgroundWorkerCount = 4;
 
-/// A provider for the wordlist to use when generating the crossword.
 @riverpod
 Future<BuiltSet<String>> wordList(WordListRef ref) async {
-  // This codebase requires that all words consist of lowercase characters
-  // in the range 'a'-'z'. Words containing uppercase letters will be
-  // lowercased, and words containing runes outside this range will
-  // be removed.
+
 
   final re = RegExp(r'^[a-z]+$');
   final words = await rootBundle.loadString('assets/words.txt');
@@ -28,7 +24,6 @@ Future<BuiltSet<String>> wordList(WordListRef ref) async {
     ..where((word) => re.hasMatch(word)));
 }
 
-/// An enumeration for different sizes of [model.Crossword]s.
 enum CrosswordSize {
   small(width: 20, height: 11),
   medium(width: 40, height: 22),
@@ -46,7 +41,6 @@ enum CrosswordSize {
   String get label => '$width x $height';
 }
 
-/// A provider that holds the current size of the crossword to generate.
 @Riverpod(keepAlive: true)
 class Size extends _$Size {
   var _size = CrosswordSize.medium;
@@ -146,8 +140,6 @@ class Puzzle extends _$Puzzle {
   }
 }
 
-// Trampoline functions to disentangle these Isolate target calls from the
-// unsendable reference to the [Puzzle] provider.
 
 Future<model.CrosswordPuzzleGame> _puzzleFromCrosswordTrampoline(
         (model.Crossword, BuiltSet<String>) args) async =>

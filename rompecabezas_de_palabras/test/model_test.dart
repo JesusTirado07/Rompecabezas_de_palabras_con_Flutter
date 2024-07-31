@@ -198,7 +198,6 @@ void main() {
 
     expect(crossword.valid, true);
 
-    // Above the top of the board
     final crossword1 = crossword.addWord(
       direction: Direction.down,
       location: Location.at(0, -1),
@@ -206,7 +205,6 @@ void main() {
     );
     expect(crossword1, isNull);
 
-    // To the left of the board
     final crossword2 = crossword.addWord(
       direction: Direction.down,
       location: Location.at(-1, 0),
@@ -214,7 +212,6 @@ void main() {
     );
     expect(crossword2, isNull);
 
-    // To the right of the board
     final crossword3 = crossword.addWord(
       direction: Direction.down,
       location: Location.at(51, 0),
@@ -222,7 +219,6 @@ void main() {
     );
     expect(crossword3, isNull);
 
-    // Below the bottom of the board
     final crossword4 = crossword.addWord(
       direction: Direction.down,
       location: Location.at(0, 51),
@@ -606,7 +602,6 @@ void main() {
 
     expect(crossword.valid, true);
 
-    // Above the top of the board
     final crossword1 = crossword.addWord(
       direction: Direction.down,
       location: Location.at(0, -1),
@@ -615,7 +610,6 @@ void main() {
     );
     expect(crossword1, isNull);
 
-    // To the left of the board
     final crossword2 = crossword.addWord(
       direction: Direction.down,
       location: Location.at(-1, 0),
@@ -624,7 +618,6 @@ void main() {
     );
     expect(crossword2, isNull);
 
-    // To the right of the board
     final crossword3 = crossword.addWord(
       direction: Direction.down,
       location: Location.at(51, 0),
@@ -633,7 +626,6 @@ void main() {
     );
     expect(crossword3, isNull);
 
-    // Below the bottom of the board
     final crossword4 = crossword.addWord(
       direction: Direction.down,
       location: Location.at(0, 51),
